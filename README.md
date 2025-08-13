@@ -1,14 +1,14 @@
 # 🤖 Autonomous AI Bug-Fixing Agent
 
-An advanced, autonomous AI agent that analyzes, plans, and automatically fixes bugs in software repositories. This project leverages a powerful multi-LLM architecture with **Cohere's `command-r-plus`** for strategic planning, **Google's `gemini-1.5-flash`** for high-speed quality assurance, and a **Neo4j Knowledge Graph** for deep codebase analysis.
+An advanced, autonomous AI agent that analyzes, plans, and automatically fixes bugs in software repositories. This project leverages a powerful multi-LLM architecture with **Cohere's `command-r`** for strategic planning, **Google's `gemini-pro`** for high-speed quality assurance, and a **Neo4j Knowledge Graph** for deep codebase analysis.
 
 ## ✨ Key Features
 
 -   **⚙️ Autonomous Operation**: Takes a GitHub repository URL and a bug description as input and works end-to-end to produce a fix.
 -   **🧠 Knowledge Graph Analysis**: Builds a Neo4j knowledge graph of the codebase to understand file structures, class definitions, and function relationships before acting.
 -   **🤝 Multi-LLM Synergy**:
-    -   **Planner (`command-r-plus`)**: Cohere's state-of-the-art model generates precise, multi-step tool-use plans to address the issue.
-    -   **Reviewer (`gemini-1.5-flash`)**: Google's lightning-fast model performs strict, logical quality assurance on the executed plan to verify its success.
+    -   **Planner (`command-r`)**: Cohere's state-of-the-art model generates precise, multi-step tool-use plans to address the issue.
+    -   **Reviewer (`gemini-pro`)**: Google's lightning-fast model performs strict, logical quality assurance on the executed plan to verify its success.
 -   **🔄 Self-Correcting Loop**: If the Gemini reviewer finds a flaw, the workflow automatically loops back to the Cohere planner with detailed failure context, enabling a more informed and effective second attempt.
 -   **📚 Knowledge Persistence**: Successful bug-fix plans are saved back into the Neo4j graph, allowing the agent to learn from past successes and solve similar problems more efficiently.
 -   **🚀 Automated Git Integration**: Upon a successful and verified fix, the agent automatically commits the changes and pushes them back to the source repository.
@@ -39,9 +39,9 @@ graph TD
     end
 
     subgraph "Phase 2: Core Bug-Fixing Loop"
-        Planner["📝 Planner (command-r-plus)<br>Generate step-by-step plan"]:::aiNode
+        Planner["📝 Planner (command-r)<br>Generate step-by-step plan"]:::aiNode
         Executor["⚙️ Executor<br>Run tools (read/write files)"]:::processNode
-        Reviewer{"🕵️‍♀️ Reviewer (gemini-1.5-flash)<br>Is the plan successful?"}:::decisionNode
+        Reviewer{"🕵️‍♀️ Reviewer (gemini-pro)<br>Is the plan successful?"}:::decisionNode
         
         Planner --> Executor
         Executor --> Reviewer
