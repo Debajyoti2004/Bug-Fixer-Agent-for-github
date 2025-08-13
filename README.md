@@ -69,8 +69,8 @@ graph TD
 ## 🛠️ Technology Stack
 
 -   **AI & LLMs**:
-    -   **Planner**: Cohere `command-r-plus`
-    -   **Reviewer**: Google `gemini-1.5-flash`
+    -   **Planner**: Cohere `command-r`
+    -   **Reviewer**: Google `gemini-pro`
     -   **Framework**: LangChain & LangGraph
 -   **Graph Database**: Neo4j
 -   **Core Language**: Python 3.8+
