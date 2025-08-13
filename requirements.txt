@@ -1,0 +1,12 @@
+
+langchain
+langchain-core
+langgraph
+langchain-google-genai
+cohere
+
+neo4j
+GitPython
+
+python-dotenv
+rich
